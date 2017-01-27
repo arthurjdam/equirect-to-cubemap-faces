@@ -2,7 +2,7 @@
 
 Function that convert an equirectangular/latlong map into an array of cubemap faces (like you would use to send to OpenGL).
 
-This is a 'node-ified' fork from [ThomCC's implementation](https://github.com/thomcc/equirect-to-cubemap-faces)
+This is a 'node-ified' wrap around [ThomCC's implementation](https://github.com/thomcc/equirect-to-cubemap-faces)
 
 ## Installation
 
@@ -15,20 +15,15 @@ Example:
 ```js
 
 const NodeEquirectToCubemap = require('node-equirect-to-cubemap');
-const fs = require('fs');
 
-fs.readFile('someFile.png', (img, err) => {
-	NodeEquirectToCubemap.fromImage(img, 1024).then(faces => {
+NodeEquirectToCubemap.fromFile('Hallway_seq.005.jpg', 512).then(images => {
+	images.map((img, index) => {
+		let out = fs.createWriteStream(__dirname + '/face_' + NodeEquirectToCubemap.order[index] + '.png');
+		let str = img.pngStream();
 
-		faces.map((face, index) => {
-			let out = fs.createWriteStream(__dirname + '/face_' + index + '.png');
-			let str = face.pngStream();
-
-			str.on('data', chunk => {
-				out.write(chunk);
-			});
+		str.on('data', chunk => {
+			out.write(chunk);
 		});
-
 	});
 });
 
