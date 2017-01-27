@@ -2,6 +2,11 @@ const gamma = 2.2;
 const igamma = 1.0 / gamma;
 
 class EquirectToCubemap {
+	constructor()
+	{
+		
+	}
+	
 	static clamp(v, lo, hi)
 	{
 		return Math.min(hi, Math.max(lo, v));
@@ -37,12 +42,10 @@ class EquirectToCubemap {
 		{
 			var facePixels = facePixArray[face];
 			var faceData = facePixels.data;
-			var faceWidth = facePixels.width | 0;
-			var faceHeight = facePixels.height | 0;
 			
-			for (var j = 0; j < faceHeight; ++j)
+			for (let j = 0; j < edge; ++j)
 			{
-				for (var i = 0; i < faceWidth; ++i)
+				for (let i = 0; i < edge; ++i)
 				{
 					let x = 0.0;
 					let y = 0.0;
