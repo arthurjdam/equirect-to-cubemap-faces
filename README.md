@@ -18,9 +18,21 @@ const NodeEquirectToCubemap = require('node-equirect-to-cubemap');
 const fs = require('fs');
 
 fs.readFile('someFile.png', (img, err) => {
-	new NodeEquirectToCubemap(img, 1024).then(faces => {
-		console.log(faces.length);
+	NodeEquirectToCubemap.fromImage(img, 1024).then(faces => {
+
+		faces.map((face, index) => {
+			let out = fs.createWriteStream(__dirname + '/face_' + index + '.png');
+			let str = face.pngStream();
+
+			str.on('data', chunk => {
+				out.write(chunk);
+			});
+		});
+
 	});
 });
 
 ```
+
+Returns:
+6 Images. 
