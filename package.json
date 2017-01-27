@@ -14,15 +14,13 @@
     "longitude"
   ],
   "author": "Arthur Dam",
-  "contributors": [{
-    "name": "Thom Chiovoloni"
-  }],
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/arthurjdam/node-equirect-to-cubemap-faces.git"
   },
   "dependencies": {
-    "canvas": "^1.6.2"
+    "canvas": "^1.6.2",
+    "equirect-cubemap-faces-js": "^1.0.0"
   }
 }
