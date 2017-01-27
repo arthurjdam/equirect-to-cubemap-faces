@@ -19,5 +19,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/thomcc/equirect-to-cubemap-faces.git"
+  },
+  "dependencies": {
+    "canvas": "^1.6.2"
   }
 }
