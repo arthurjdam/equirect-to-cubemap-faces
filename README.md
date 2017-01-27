@@ -13,9 +13,14 @@ Will provide npm based install later
 Example:
 
 ```js
-const NodeEquirectToCubemap = require('node-equirect-to-cubemap');
 
-new NodeEquirectToCubemap(image, 1024).then(faces => {
-	console.log(faces.length);
+const NodeEquirectToCubemap = require('node-equirect-to-cubemap');
+const fs = require('fs');
+
+fs.readFile('someFile.png', (img, err) => {
+	new NodeEquirectToCubemap(img, 1024).then(faces => {
+		console.log(faces.length);
+	});
 });
+
 ```
