@@ -1,24 +1,26 @@
 {
-  "name": "equirect-cubemap-faces-js",
+  "name": "node-equirect-cubemap-faces",
   "version": "1.0.0",
-  "description": "Convert an equirectangular image (aka lat-long map) into cubemap faces you can feed to WebGL",
+  "description": "Convert an equirectangular image (aka lat-long map) into cubemap faces",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "webgl",
     "cubemap",
     "equirectangular",
     "latlong",
     "latitude",
     "longitude"
   ],
-  "author": "Thom Chiovoloni",
+  "author": "Arthur Dam",
+  "contributors": [{
+    "name": "Thom Chiovoloni"
+  }],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/thomcc/equirect-to-cubemap-faces.git"
+    "url": "https://github.com/arthurjdam/node-equirect-to-cubemap-faces.git"
   },
   "dependencies": {
     "canvas": "^1.6.2"
