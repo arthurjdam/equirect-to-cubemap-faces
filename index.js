@@ -16,7 +16,7 @@ const _exec = function(image, faceSize) {
 	let faces = new Array(6).fill(0).map(i => new Canvas(faceSize, faceSize));
 	let imageData = canvas.getContext('2d').getImageData(0, 0, canvas.width, canvas.height);
 
-	let cube = EquirectToCubemap.imageDataToImageData(imageData, faces.map(canvas => canvas.getContext('2d').createImageData(canvas.width, canvas.height)));
+	let cube = EquirectToCubemap.transformToCubeFaces(imageData, faces.map(canvas => canvas.getContext('2d').createImageData(canvas.width, canvas.height)));
 	cube.map((imageData, i) => faces[i].getContext('2d').putImageData(imageData, 0, 0));
 	
 	return faces;
