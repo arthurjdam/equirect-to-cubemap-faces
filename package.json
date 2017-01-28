@@ -21,6 +21,6 @@
   },
   "dependencies": {
     "canvas": "^1.6.2",
-    "equirect-cubemap-faces-js": "^1.0.0"
+    "equirect-cubemap-faces-js": "^1.1.0"
   }
 }
