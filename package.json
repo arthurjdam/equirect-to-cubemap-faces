@@ -1,6 +1,6 @@
 {
   "name": "node-equirect-cubemap-faces",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Convert an equirectangular image (aka lat-long map) into cubemap faces",
   "main": "index.js",
   "scripts": {
