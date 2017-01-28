@@ -6,19 +6,18 @@ This is a 'node-ified' wrap around [ThomCC's implementation](https://github.com/
 
 Relies on [node-canvas](https://github.com/Automattic/node-canvas) which can run without a GPU dependency (which means it will run on a cheap EC2 instance).
 
-## Installation
+### Installation ###
 
 ```
 npm i node-equirect-cubemap-faces
 ```
 
-## Usage
+### Usage ###
 
 Example:
 
 ```js
-
-const NodeEquirectToCubemap = require('node-equirect-to-cubemap');
+const NodeEquirectToCubemap = require('node-equirect-cubemap-faces');
 
 NodeEquirectToCubemap.fromFile('Hallway_seq.005.jpg', 512).then(faces => {
 	faces.map((img, index) => {
@@ -31,12 +30,12 @@ NodeEquirectToCubemap.fromFile('Hallway_seq.005.jpg', 512).then(faces => {
 		});
 	});
 });
-
 ```
 
 Or, if you already read a file, just send it through as buffer and run transform like this:
 
 ```js
+const NodeEquirectToCubemap = require('node-equirect-cubemap-faces');
 
 fs.readFile('Hallway_seq.005.jpg', (err, image) =>
 {
@@ -50,7 +49,6 @@ fs.readFile('Hallway_seq.005.jpg', (err, image) =>
 		console.log(out);
 	});
 });
-
 ```
 
 Returns:
