@@ -37,11 +37,21 @@ const _imageToCanvas = function(image) {
 	return canvas;
 }	
 
-class NodeEquirectToCubemap {	
+class NodeEquirectToCubemap {
+	/**
+	 * Returns the order of faces
+	 * @returns {Array}
+	 */
 	static get order() {
 		return ['right', 'left', 'top', 'bottom', 'front', 'back'];
 	}
 
+	/**
+	 * Parses a loaded image and returns a cubemap
+	 * @param {Buffer} image - Image in Buffer format
+	 * @param {number} faceSize - Size (in pixels) of the faces to be returned
+	 * @returns {Array}
+	 */
 	static fromImage(image, faceSize) {
 		return new Promise((res, rej) => 
 		{
@@ -49,6 +59,12 @@ class NodeEquirectToCubemap {
 		});
 	}
 
+	/**
+	 * Parses a file and returns a cubemap
+	 * @param {string} file - Path to the file to be processed
+	 * @param {number} faceSize - Size (in pixels) of the faces to be returned
+	 * @returns {Array} 
+	 */
 	static fromFile(file, faceSize) {
 		return new Promise((res, rej) => 
 		{
